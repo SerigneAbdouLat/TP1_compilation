@@ -23,5 +23,7 @@ rule token = parse
 { DPAREN }
 | eof
 { raise Eof }
+|';'
+{PVIRGULE}
 | _
 { raise TokenInconu }

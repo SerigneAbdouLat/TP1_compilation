@@ -1,4 +1,4 @@
-%token NUMBER PLUS MINUS TIMES GPAREN DPAREN EOL
+%token NUMBER PLUS MINUS TIMES GPAREN DPAREN PVIRGULE EOL
 %left PLUS MINUS
 %left TIMES
 %nonassoc UMINUS
@@ -6,7 +6,11 @@
 %start main
 %%
 main:
-expression EOL
+commande EOL
+{}
+;
+commande:
+expression PVIRGULE
 {}
 ;
 expression:
