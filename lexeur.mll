@@ -16,6 +16,8 @@ rule token = parse
 | '-'
 { MINUS }
 | '*'
+{ DIVIDE }
+| '/'
 { TIMES }
 | '('
 { GPAREN }

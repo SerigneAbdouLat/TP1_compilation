@@ -1,6 +1,6 @@
-%token NUMBER PLUS MINUS TIMES GPAREN DPAREN PVIRGULE EOL
+%token NUMBER PLUS MINUS TIMES DIVIDE GPAREN DPAREN PVIRGULE EOL
 %left PLUS MINUS
-%left TIMES
+%left TIMES DIVIDE
 %nonassoc UMINUS
 %type <unit> main expression
 %start main
@@ -19,6 +19,8 @@ expression PLUS expression
 | expression MINUS expression
 {}
 | expression TIMES expression
+{}
+| expression DIVIDE expression
 {}
 | GPAREN expression DPAREN
 {}
