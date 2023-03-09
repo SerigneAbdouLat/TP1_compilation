@@ -11,13 +11,13 @@ rule token = parse
 { EOL }
 | ['0'-'9']+
 as lexem
-{ NUMBER(int_of_string lexem) }
+{ NUMBER(float_of_string lexem) }
 
-| '+'
+| "+."
 { PLUS }
-| '-'
+| "-."
 { MINUS }
-| '*'
+| "*."
 { TIMES }
 | '('
 { GPAREN }
