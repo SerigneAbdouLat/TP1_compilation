@@ -10,8 +10,8 @@ rule token = parse
 | ['\n']
 { EOL }
 | ['0'-'9']+
-    as lexem
-    { NUMBER(int_of_string lexem) }
+as lexem
+{ NUMBER(int_of_string lexem) }
 
 | '+'
 { PLUS }
