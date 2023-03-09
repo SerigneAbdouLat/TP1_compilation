@@ -9,7 +9,7 @@ rule token = parse
 { token lexbuf }
 | ['\n']
 { EOL }
-| ['0'-'9']+
+| (['0'-'9']+)('.'['0'-'9']+)
 { NUMBER }
 | '+'
 { PLUS }
