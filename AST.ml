@@ -8,6 +8,10 @@ type expression_a =
     | Num   of int
 ;;
 
+type commande_a =
+    | Expr of expression_a
+;;
+
 
 (* Fonctions d'affichage *)
 
@@ -20,4 +24,7 @@ and print_AST form = let open Format in function
     | Div   (g,d) -> print_binaire form "Div" g d
     | Neg    e    -> fprintf form "@[<2>%s@ %a@]" "Neg" print_AST e 
     | Num    n    -> fprintf form "@[<2>%s@ %i@]" "Num" n
-;; 
+
+let print_commande form = let open Format in function
+    | Expr e -> print_AST form e
+;;
